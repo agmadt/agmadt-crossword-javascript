@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <svg    xmlns="http://www.w3.org/2000/svg"
+              width="240.3167"
+                          height="196.70244"
+                          viewBox="0 0 240.3167 196.70244"
+                          id="svg2"
+                          version="1.1">
+                      <defs   id="defs4" ></defs>
+                      <g      id="layer1"
+                              transform="translate(-60.027905,-32.013624)">
+                          <g      id="g3337"
+                                  transform="matrix(5.1223509,-0.37376733,0.44082797,4.8118769,-87.835884,-84.618541)">
+                              <polyline
+                                      id="polyline3339"
+                                      points="70,35 45,65 30,52  "
+                                      stroke-miterlimit="10"
+                                      class="check"
+                                      style="fill:none;stroke:#2f892d;stroke-width:8;stroke-linecap:square;stroke-miterlimit:10;stroke-opacity:1"
+                                      transform="matrix(0.9434154,0,0,0.94653915,1.4765454,1.6487802)" ></polyline>
+                          </g>
+                      </g>
+                  </svg>

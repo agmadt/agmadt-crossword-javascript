@@ -1,0 +1,170 @@
+{
+    "width": 13,
+    "height": 13,
+    "acrossClues": [
+        {
+            "answer": "CAT",
+            "clue": "Mouse chaser",
+            "x": 10,
+            "y": 0
+        },
+        {
+            "answer": "MIX",
+            "clue": "Blend",
+            "x": 0,
+            "y": 1
+        },
+        {
+            "answer": "HIT",
+            "clue": "Collide",
+            "x": 4,
+            "y": 1
+        },
+        {
+            "answer": "PIANO",
+            "clue": "It has 88 keys",
+            "x": 8,
+            "y": 2
+        },
+        {
+            "answer": "READ",
+            "clue": "Use a book",
+            "x": 1,
+            "y": 3
+        },
+        {
+            "answer": "GOAT",
+            "clue": "Animal with a beard",
+            "x": 1,
+            "y": 5
+        },
+        {
+            "answer": "ERA",
+            "clue": "Chronology segment",
+            "x": 8,
+            "y": 5
+        },
+        {
+            "answer": "US",
+            "clue": "America",
+            "x": 5,
+            "y": 6
+        },
+        {
+            "answer": "AL",
+            "clue": "Aliminum",
+            "x": 0,
+            "y": 7
+        },
+        {
+            "answer": "ANTIFREEZE",
+            "clue": "Winter engine necessity",
+            "x": 1,
+            "y": 8
+        },
+        {
+            "answer": "MR",
+            "clue": "Mister",
+            "x": 0,
+            "y": 9
+        },
+        {
+            "answer": "CONSTRUCT",
+            "clue": "build",
+            "x": 4,
+            "y": 11
+        }
+    ],
+    "downClues": [
+        {
+            "answer": "MM",
+            "clue": "Millimeter",
+            "x": 0,
+            "y": 0
+        },
+        {
+            "answer": "AI",
+            "clue": "Artificial intelligence",
+            "x": 5,
+            "y": 0
+        },
+        {
+            "answer": "CHAMPAGNE",
+            "clue": "Bubbly drink",
+            "x": 10,
+            "y": 0
+        },
+        {
+            "answer": "IRREGULAR",
+            "clue": "Not regular",
+            "x": 1,
+            "y": 1
+        },
+        {
+            "answer": "TOUCHSCREEN",
+            "clue": "Common A.T.M. feature (2 words)",
+            "x": 6,
+            "y": 1
+        },
+        {
+            "answer": "SPIDERWEB",
+            "clue": "Arachnid construction that insects get caught in: 2 words.",
+            "x": 8,
+            "y": 1
+        },
+        {
+            "answer": "PARAMETER",
+            "clue": "Figure in a math function",
+            "x": 3,
+            "y": 2
+        },
+        {
+            "answer": "FIFTEENTH",
+            "clue": "15th",
+            "x": 12,
+            "y": 4
+        },
+        {
+            "answer": "MP",
+            "clue": "Military police",
+            "x": 0,
+            "y": 9
+        },
+        {
+            "answer": "URL",
+            "clue": "Address starting http://",
+            "x": 9,
+            "y": 10
+        }
+    ],
+    "settings": {
+        "alphabet": "ABCÇDEFGHIİJKLMNOÖPQRSŞTUÜVWXYZabcçdefghıijklmnoöpqrsştuüvwxyz",
+        "cell_highlight_color": "#FFCD6C",
+        "selected_cell_color": "#FAB837",
+        "letter_cell_color": "#FFFFFF",
+        "empty_cell_color": "#000000",
+        "cell_line_color": "#393939",
+        "wrong_cell_color": "#FFA5AF",
+        "letter_color": "#000000",
+        "number_color": "#000000"
+    },
+    "labels": {
+        "clear_dialog_title": "Warning",
+        "clear_dialog_text": "Do you really want to clear the board?",
+        "crossword_theme": "General",
+        "description": "Tired of crossword games that don't run on mobile devices? Then give this one a try. It is a modern game with HTML5 canvas and material design elements.",
+        "help_text": "Fill in the correct answers, one letter per square, both across and down, from the given clues. You can reveal a letter or word when you are stuck.",
+        "help_title": "Instructions",
+        "game_title": "CrossWord",
+        "button_label_dialog_close": "Close",
+        "across": "VERTICAL:",
+        "down": "HORIZONTAL:",
+        "congrat_title": "Well done!",
+        "btn_label_share_win": "Share",
+        "btn_label_yes": "Yes",
+        "btn_label_no": "No",
+        "reveal_letter": "Reveal letter",
+        "reveal_word": "Reveal word",
+        "submit_answer": "Answer"
+    }
+}
