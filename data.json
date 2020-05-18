@@ -142,7 +142,7 @@
         "cell_highlight_color": "#FFCD6C",
         "selected_cell_color": "#FAB837",
         "letter_cell_color": "#FFFFFF",
-        "empty_cell_color": "#000000",
+        "empty_cell_color": "#333333",
         "cell_line_color": "#393939",
         "wrong_cell_color": "#FFA5AF",
         "letter_color": "#000000",

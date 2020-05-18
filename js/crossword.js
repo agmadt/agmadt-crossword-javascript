@@ -47,22 +47,22 @@ function supportsTouch() {
 }
 
 function mouseScrolled(e) {
-    // var delta = 0;
-    // e = e || window.event;
+    var delta = 0;
+    e = e || window.event;
 
-    // if (e.wheelDelta)
-    //     delta = e.wheelDelta / 120;
-    // else if (e.detail)
-    //     delta = -e.detail / 3;
+    if (e.wheelDelta)
+        delta = e.wheelDelta / 120;
+    else if (e.detail)
+        delta = -e.detail / 3;
 
-    // if (delta)zoomBoard(delta);
-    // if (e.preventDefault)
-    //     e.preventDefault();
-    // e.returnValue = false;
+    if (delta)zoomBoard(delta);
+    if (e.preventDefault)
+        e.preventDefault();
+    e.returnValue = false;
 }
 
 function zoomBoard(delta) {
-    // resizeGrid(delta < 0 ? RESIZE_OPTION.ZOOM_OUT : RESIZE_OPTION.ZOOM_IN);
+    resizeGrid(delta < 0 ? RESIZE_OPTION.ZOOM_OUT : RESIZE_OPTION.ZOOM_IN);
 }
 
 function startGame() {
@@ -75,8 +75,8 @@ function startGame() {
         canvas.addEventListener('mouseup', canvasMouseUp, false);
         canvas.addEventListener('mousemove', canvasMouseMove, false);
 
-        // dragger[0].onmousewheel = mouseScrolled;
-        // dragger[0].addEventListener('DOMMouseScroll', mouseScrolled, false);
+        dragger[0].onmousewheel = mouseScrolled;
+        dragger[0].addEventListener('DOMMouseScroll', mouseScrolled, false);
     }
 }
 
@@ -86,10 +86,10 @@ function selectFirstWord(){
 }
 
 function centerBoard(){
-    // var left = (board.width() - dragger.width()) / 2;
-    // dragger.css("left", Math.round(left));
-    // var top = ((board.height()) - dragger.height()) / 2;
-    // dragger.css("top", Math.round(top));
+    var left = (board.width() - dragger.width()) / 2;
+    dragger.css("left", Math.round(left));
+    var top = ((board.height()) - dragger.height()) / 2;
+    dragger.css("top", Math.round(top));
 }
 
 function resizeGrid(option) {
@@ -341,9 +341,7 @@ function resize() {
     }
 
     stage.update();
-
 }
-
 
 function showSuccess(){
 
@@ -659,7 +657,6 @@ function renderClue(rightAway) {
 
         },timeout);
     }
-
 }
 
 function cellClicked(newCell){
@@ -744,7 +741,6 @@ function cellClicked(newCell){
     }
 }
 
-
 function showCluePopup(){
 
     $("#clue_number").text((selectedWord.number) + ', ' + (selectedWord.across ? puzzle.labels.across : puzzle.labels.down));
@@ -760,7 +756,6 @@ function showCluePopup(){
         }
     });
 }
-
 
 function setEvents(){
 
@@ -937,7 +932,6 @@ function trackCorrectAnswers(){
 
     return true;
 }
-
 
 function getMobileKey(){
 
@@ -1276,6 +1270,17 @@ function Cell(number, x, y){
             $('#'+tileId).remove();
         },600);
 
+    }
+    
+    function paintTriangle(color){
+        var shape = new createjs.Shape();
+        shape.graphics.beginFill(color);
+        shape.graphics.moveTo(cellSize.width / 2, 0);
+        shape.graphics.lineTo(cellSize.width, 0);
+        shape.graphics.lineTo(cellSize.width, cellSize.height/2);
+        shape.graphics.lineTo(cellSize.width/2, 0);
+        shape.graphics.endFill();
+        return shape;
     }
 
     function paint(color){

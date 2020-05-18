@@ -4,7 +4,8 @@
     list-style-type: none;
     font-size: 100%;
     border: 0 none;
-    background: none repeat scroll 0 0 transparent
+    background: none repeat scroll 0 0 transparent;
+    box-sizing: border-box;
 }
 
 *:focus, *:active {
@@ -35,8 +36,6 @@ html {
     display: table;
     clear: both;
 }
-
-
 
 #rotate{
     width:100%;
@@ -96,11 +95,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     -webkit-appearance: button
 }
 
-
 .clear, #intro:after {
     clear: both
 }
-
 
 #intro:before, #intro:after {
     display: table;
@@ -147,21 +144,29 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 #crossword {
+    background-color: #FFF;
     display: block;
+    height: 100%;
     position: absolute;
     width: 100%;
-    min-height: 100%;
-    background-color: #FFF;
 }
 
-#crossword-intro {
+#crossword-outro, .outro #crossword-intro {
+    display: none;
+}
+
+.outro #crossword-outro {
+    display: block;
+}
+
+#crossword-intro, #crossword-outro {
     background: linear-gradient(164.98deg, #33BEDC -28.7%, #074F92 157.83%);
     position: absolute;
         top: 50px;
         right: 0;
         bottom: 0;
         left: 0;
-    z-index: 499;
+    z-index: 510;
 }
 
 .crossword-logo {
@@ -185,9 +190,205 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     background: url
 }
 
-#game_view {
+.crossword-ylc-logo {
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.score-box::before {
+    background: #33BEDC;
+    border-radius: 10px;
+    content: "";
+    height: 329px;
+    position: absolute;
+        bottom: 5px;
+        left: 0;
+    width: 428px;
+}
+
+.score-box {
+    background: #1490AB;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    height: 329px;
+    margin: 81px auto 0;
+    position: relative;
+    width: 428px;
+}
+
+.score-box::after {
+    background: #FFF;
+    border-radius: 6px;
+    content: "";
+    position: absolute;
+        top: 1px;
+        right: 6px;
+        bottom: 11px;
+        left: 6px;
+}
+
+.score-box__trophy-container {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.score-box__trophy {
+    background: url("../images/trophy.png");
+    height: 73px;
+    position: absolute;
+        top: 19px;
+    width: 75px;
+}
+
+.score-box__trophy.left {
+    float: none;
+    left: 43px;
+}
+
+.score-box__trophy.right {
+    float: none;
+    right: 43px;
+}
+
+.score-box__score {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 24px 0 0 0;
+}
+
+.score-box__score .score {
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.score-box__time {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px 0 0 0;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.score-box__time .time {
+    color: #00ACEE;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.score-box__social-media-container {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 15px auto 0;
+    position: relative;
+    text-align: center;
+    width: 230px;
+    z-index: 1;
+}
+
+.share-button-container {
+    margin-top: 8px;
+}
+
+.score-box__social-media-container .social-media-share-button {
     float: left;
-    width:600px;
+    margin: 0 40px 0 0;
+}
+
+.score-box__social-media-container .social-media-share-button:last-child {
+    margin-right: 0;
+}
+.social-media-share-button {
+    background: #D1941C;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 45px;
+    position: relative;
+    width: 50px;
+}
+
+.social-media-share-button::before {
+    background: #FAB837;
+    border-radius: 10px;
+    content: "";
+    height: 45px;
+    position: absolute;
+        bottom: 5px;
+        left: 0;
+    width: 50px;
+}
+
+.social-media-share-button.facebook::before { 
+    background: #3B5998;
+}
+
+.social-media-share-button.facebook {
+    background: #335192;
+    position: relative;
+}
+
+.social-media-share-button.facebook::after { 
+    background: url("../images/facebook_logo.png");
+    content: "";
+    height: 30px;
+    position: absolute;
+        top: 3px;
+        left: 17px;
+    width: 16px;
+}
+
+.social-media-share-button.twitter::before {
+    background: #00ACEE;
+}
+
+.social-media-share-button.twitter {
+    background: #0091C9;
+    position: relative;
+}
+
+.social-media-share-button.twitter::after { 
+    background: url("../images/twitter_logo.png");
+    content: "";
+    height: 20px;
+    position: absolute;
+        top: 7px;
+        left: 14px;
+    width: 24px;
+}
+
+.social-media-share-button.whatsapp::before { 
+    background: #25D366;
+}
+
+.social-media-share-button.whatsapp {
+    background: #17A94E;
+    position: relative;
+}
+
+.social-media-share-button.whatsapp::after { 
+    background: url("../images/whatsapp_logo.png");
+    content: "";
+    height: 22px;
+    position: absolute;
+        top: 6px;
+        left: 15px;
+    width: 22px;
+}
+
+.play-again-button {
+    cursor: pointer;
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+
+#game_view {
+    width: 70%;
+}
+
+#game {
+    float: left;
+    width: 70%;
 }
 
 #intro {
@@ -229,8 +430,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     height:56px;
 }
 
-
-
 #loader {
     width: 100%;
     height: 100%;
@@ -254,13 +453,9 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     width:100%;
 }
 
-
-
 .visible {
     display: block
 }
-
-
 
 @media all and (min-width: 500px) {
 
@@ -322,7 +517,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 
 .clue_list_label{
     font-weight: bold;
-    padding: 20px 15px 10px 15px;
+    padding: 20px 15px 7px 15px;
 }
 
 .clue_text{
@@ -375,8 +570,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     cursor: pointer;
     user-select: none;
     position: relative;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 li{
@@ -384,19 +579,19 @@ li{
 }
 
 #board {
-    background: #000;
+    background: #333;
     overflow: hidden;
     padding: 10px;
     position: absolute;
         top: 168px;
         bottom: 0px;
-    width: 600px; 
+    width: 70%;
     z-index: 1;
 }
 
 @media all and (min-width: 600px) {
     #content {
-        max-width: 1024px;
+        max-width: 100%;
         margin: 0 auto;
         box-shadow: rgba(0, 0, 0, .25) 0 5px 15px;
         background-color: #fff
@@ -411,10 +606,10 @@ li{
         border-radius: 0;
         box-shadow: none;
         float: left;
-        height: 100%;
+        height: calc(100% - 178px);
         position: relative;
         overflow: auto;
-        width: 212px;
+        width: 15%;
         z-index: 99;
     }
 
@@ -467,7 +662,7 @@ li{
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     width: 100%;
     padding: 0;
-    background-color: #444444;
+    box-shadow: 0 0 5px #222;
 }
 
 .hidden {
@@ -518,10 +713,6 @@ li{
 
 input[type="password"] { border:0 none; height:1px; background-color:transparent;}
 
-#crossword_canvas{
-    box-shadow:rgba(0,0,0,.3) 0 0 12px;
-}
-
 .game-nav-wrapper {
     background: #4F4F4F;
     height: 50px;
@@ -560,16 +751,20 @@ input[type="password"] { border:0 none; height:1px; background-color:transparent
 #header_clue_wrapper {
     background: linear-gradient(164.98deg, #33BEDC -28.7%, #074F92 157.83%);
     height: auto;
-    padding: 25px 0 28px 20px;
+    padding: 25px 20px 28px;
 }
 
-.intro #header_clue_wrapper {
+.intro #header_clue_wrapper, .outro #header_clue_wrapper {
     background: none;
 }
 
 .intro #header_clue_wrapper .timer,
 .intro #header_clue_wrapper .word-check,
-.intro #header_clue_wrapper .word-hint {
+.intro #header_clue_wrapper .word-hint,
+.outro #header_clue_wrapper .timer,
+.outro #header_clue_wrapper .word-check,
+.outro #header_clue_wrapper .word-hint,
+.outro #header_clue_wrapper .word-setting {
     visibility: hidden;
 }
 
@@ -633,7 +828,10 @@ input[type="password"] { border:0 none; height:1px; background-color:transparent
 }
 
 .hint-box {
+    position: absolute;
+        top: 25px;
     visibility: hidden;
+    width: 100%;
 }
 
 .hint-box.active {
@@ -653,7 +851,7 @@ input[type="password"] { border:0 none; height:1px; background-color:transparent
 }
 
 .hint-box .crossword-button, .hint-box .crossword-button::before {
-    float: left;
+    margin: 0 auto;
     width: 363px;
 }
 
@@ -722,13 +920,17 @@ input[type="password"] { border:0 none; height:1px; background-color:transparent
 .right-action-button {
     float: right;
     position: relative;
-    width: 241px;
+    width: 230px;
 }
 
 .word-check, .word-hint, .word-setting {
     float: left;
     margin-right: 10px;
     position: relative;
+}
+
+.word-setting {
+    margin: 0;
 }
 
 .word-check .crossword-button, .word-check .crossword-button::before, 
@@ -915,3 +1117,4 @@ input[type="password"] { border:0 none; height:1px; background-color:transparent
     margin: 20px auto 0;
     width: 200px;
 }
+

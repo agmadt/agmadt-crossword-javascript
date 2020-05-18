@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 
     <script type="text/javascript" src="js/easeljs-0.7.1.min.js"></script>
     <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
@@ -27,7 +29,7 @@
 
 </head>
 
-<body>
+<body ondragstart="return false">
     <div id="rotate" class="rotate"></div>
     <div id="content">
         <div id="loader" class="center">
@@ -90,7 +92,7 @@
                 <div class="nav-wrapper">
                     <div id="main_title" class="game_title"></div>
                 </div>
-                <div class="game-nav-reset reset-board-button">
+                <div class="game-nav-reset reset-board-button tippy-left" data-tippy-content="Reset crossword board">
                     <img src="./images/reset.png">
                     <span>Reset</span>
                 </div>
@@ -98,7 +100,38 @@
             <div id="crossword-intro">
                 <div class="crossword-logo"><img src="./images/crossword-logo.png" alt="CrossWord logo"></div>
                 <div class="ylc-logo"><img src="./images/YLC-logo.png" alt="Your life choices logo"></div>
-                <div class="start-button"><img src="./images/start_button.png" alt="Start button"></div>
+                <div class="start-button tippy" data-tippy-content="Start the game"><img src="./images/start_button.png"
+                        alt="Start button"></div>
+            </div>
+            <div id="crossword-outro">
+                <div class="crossword-ylc-logo">
+                    <img src="./images/crossword-ylc-logo.png" alt="CrossWord your life choices logo">
+                </div>
+                <div class="score-box">
+                    <div class="score-box__trophy-container">
+                        <div class="score-box__trophy left"></div>
+                        <div class="score-box__score">
+                            <div>Your Score:</div>
+                            <div class="score">1000</div>
+                        </div>
+                        <div class="score-box__trophy right"></div>
+                    </div>
+                    <div class="score-box__time">
+                        <div>Time:</div>
+                        <div class="time">00:00</div>
+                    </div>
+                    <div class="score-box__social-media-container">
+                        <div>share to:</div>
+                        <div class="share-button-container">
+                            <div class="social-media-share-button facebook"></div>
+                            <div class="social-media-share-button twitter"></div>
+                            <div class="social-media-share-button whatsapp"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="play-again-button tippy" data-tippy-content="Play again">
+                    <img src="./images/play_again_button.png" alt="Play game again">
+                </div>
             </div>
 
             <div id="header_clue_wrapper" class="group">
@@ -106,34 +139,48 @@
                     <div class="timer-text">
                         <div id="chrono">00:00:00</div>
                     </div>
-                    <div class="timer-button"></div>
+                    <div class="timer-button tippy-right" data-tippy-content="Pause the game"></div>
                 </div>
 
                 <div class="hint-box">
                     <div class="crossword-button">
                         <div class="hint-box-icon"><img src="./images/hint-box-lamp.png" alt=""></div>
                         <div class="hint-box-text">First letter is <span class="hint-first-letter"></span>. Last letter
-                            is <span class="hint-last-letter"></span></div>
+                            is <span class="hint-last-letter"></span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="right-action-button group">
-                    <div class="word-check tooltip" title="Checkword and Solve word">
+                    <div class="word-check tippy-left" title="Check word and Solve word"
+                        data-tippy-content="Check word and Solve word">
                         <div class="crossword-button"></div>
                         <div class="dropdown">
-                            <div class="crossword-button check-word"><span>CHECK WORD</span></div>
-                            <div class="crossword-button solve-word"><span>SOLVE WORD</span></div>
+                            <div class="crossword-button check-word tippy-left" data-tippy-content="Check word">
+                                <span>CHECK WORD</span>
+                            </div>
+                            <div class="crossword-button solve-word tippy-left" data-tippy-content="Solve word">
+                                <span>SOLVE WORD</span>
+                            </div>
                         </div>
                     </div>
                     <div class="word-hint">
-                        <div class="crossword-button"></div>
+                        <div class="crossword-button tippy" data-tippy-content="Hint"></div>
                     </div>
                     <div class="word-setting">
-                        <div class="crossword-button red"></div>
+                        <div class="crossword-button red tippy" data-tippy-content="Setting"></div>
                         <div class="dropdown">
-                            <div class="crossword-button sound"><img src="./images/sound.png"></div>
-                            <div class="crossword-button font-decrease"><img src="./images/font-decrease.png"></div>
-                            <div class="crossword-button font-increase"><img src="./images/font-increase.png"></div>
+                            <div class="crossword-button sound tippy-left" data-tippy-content="Change sound">
+                                <img src="./images/sound.png">
+                            </div>
+                            <div class="crossword-button font-decrease tippy-left"
+                                data-tippy-content="Decrease font size">
+                                <img src="./images/font-decrease.png">
+                            </div>
+                            <div class="crossword-button font-increase tippy-left"
+                                data-tippy-content="Increase font size">
+                                <img src="./images/font-increase.png">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -225,8 +272,11 @@
         <div class="pause-modal-wrapper">
             <div class="pause-modal">
                 <div class="pause-text">Game Paused</div>
-                <div class="pause-continue-button"><img src="./images/continue_button.png" alt="Continue button"></div>
-                <div class="pause-surrender-button"><img src="./images/surrender_button.png" alt="Surrender button">
+                <div class="pause-continue-button tippy" data-tippy-content="Continue the game">
+                    <img src="./images/continue_button.png" alt="Continue button">
+                </div>
+                <div class="pause-surrender-button tippy" data-tippy-content="Surrender">
+                    <img src="./images/surrender_button.png" alt="Surrender button">
                 </div>
             </div>
         </div>

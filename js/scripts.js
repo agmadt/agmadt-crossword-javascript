@@ -9,6 +9,16 @@ $(document).ready(function() {
         timer.addEventListener('secondsUpdated', function (e) {
             $('#chrono').html(timer.getTimeValues().toString());
         });
+        
+        centerBoard();
+        if (!supportsTouch()){
+            canvas.addEventListener('mousedown', canvasMouseDown, false);
+            canvas.addEventListener('mouseup', canvasMouseUp, false);
+            canvas.addEventListener('mousemove', canvasMouseMove, false);
+    
+            dragger[0].onmousewheel = mouseScrolled;
+            dragger[0].addEventListener('DOMMouseScroll', mouseScrolled, false);
+        }
     });
 
     // Reset board button
@@ -49,6 +59,23 @@ $(document).ready(function() {
         timer.start();
         $('.timer-button').removeClass('paused');
         $('.pause').removeClass('active');
+    })
+
+    // Surrender paused game button
+    $('.pause-surrender-button').click(function() {
+        $('.timer-button').removeClass('paused');
+        $('.pause').removeClass('active');
+
+        $('#crossword').addClass('outro');
+
+        $('.score-box__time .time').html(timer.getTimeValues().toString(['minutes', 'seconds']));
+    })
+
+    // Surrender paused game button
+    $('.play-again-button').click(function() {
+        $('#crossword').removeClass('outro');
+        $('#crossword').addClass('intro');
+        $('#crossword-intro').show();
     })
 
     // Word check dropdown function
@@ -94,4 +121,15 @@ $(document).ready(function() {
 
         $('.word-check').removeClass('active');
     })
+
+    tippy('.tippy');
+    tippy('.tippy-left', {
+        placement: 'left'
+    });
+    tippy('.tippy-right', {
+        placement: 'right'
+    });
+    tippy('.tippy-bottom', {
+        placement: 'bottom'
+    });
 });
